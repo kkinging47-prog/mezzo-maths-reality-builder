@@ -9,20 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-router-dom": "latest",
-    "@tailwindcss/postcss": "latest"
-    "lucide-react": "latest"
-  },
-  "devDependencies": {
-    "tailwindcss": "latest",
-    "postcss": "latest",
     "autoprefixer": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest"
-  }
+    "lucide-react": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
 }
