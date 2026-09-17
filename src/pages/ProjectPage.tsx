@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import FootbridgeAdventureIntro from '../components/FootbridgeAdventureIntro';
 import FootbridgeMissionEngine from '../components/FootbridgeMissionEngine';
 import MissionEngine from '../components/MissionEngine';
 import { getProjectById } from '../data/projects';
@@ -7,7 +8,12 @@ export default function ProjectPage() {
   const { projectId } = useParams();
 
   if (projectId === 'footbridge-stream') {
-    return <FootbridgeMissionEngine />;
+    return (
+      <div className="min-h-screen bg-slate-950">
+        <FootbridgeAdventureIntro />
+        <FootbridgeMissionEngine />
+      </div>
+    );
   }
 
   const project = getProjectById(projectId);
