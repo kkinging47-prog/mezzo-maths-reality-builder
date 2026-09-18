@@ -9,19 +9,20 @@ import SchoolAdminDashboard from './pages/SchoolAdminDashboard';
 import SponsorDashboard from './pages/SponsorDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFoundPage from './pages/NotFoundPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/student/dashboard" element={<StudentDashboard />} />
-      <Route path="/student/worlds" element={<WorldsPage />} />
-      <Route path="/student/project/:projectId" element={<ProjectPage />} />
-      <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
-      <Route path="/school-admin/dashboard" element={<SchoolAdminDashboard />} />
-      <Route path="/sponsor/dashboard" element={<SponsorDashboard />} />
-      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/student/dashboard" element={<ProtectedRoute roles={['student']}><StudentDashboard /></ProtectedRoute>} />
+      <Route path="/student/worlds" element={<ProtectedRoute roles={['student']}><WorldsPage /></ProtectedRoute>} />
+      <Route path="/student/project/:projectId" element={<ProtectedRoute roles={['student']}><ProjectPage /></ProtectedRoute>} />
+      <Route path="/teacher/dashboard" element={<ProtectedRoute roles={['teacher','mezzo_staff']}><TeacherDashboard /></ProtectedRoute>} />
+      <Route path="/school-admin/dashboard" element={<ProtectedRoute roles={['school_admin']}><SchoolAdminDashboard /></ProtectedRoute>} />
+      <Route path="/sponsor/dashboard" element={<ProtectedRoute roles={['sponsor']}><SponsorDashboard /></ProtectedRoute>} />
+      <Route path="/admin/dashboard" element={<ProtectedRoute roles={['admin']}><AdminDashboard /></ProtectedRoute>} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
