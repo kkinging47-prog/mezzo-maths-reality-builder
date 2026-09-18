@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
     "@tailwindcss/postcss": "latest",
     "@vitejs/plugin-react": "latest",
     "autoprefixer": "latest",
